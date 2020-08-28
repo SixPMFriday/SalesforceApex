@@ -3,13 +3,7 @@ private class TestAccountDeletion {
     @isTest static void TestDeleteAccountWithOneOpportunity() {
         // Test data set up
         // create account w/ oppotunity, then try to delete it
-        Account acct = new Account(Name='Test Account');
-        insert acct;
-        Opportunity opp = new Opportunity(Name=acct.Name + ' Opportunity',
-                                         StageName='Prospecting',
-                                         CloseDate=System.today().addMonths(1),
-                                         AccountId=acct.Id);
-       	insert opp;
+        Account[] accts = TestDataFactory.createAccountsWithOpps(1,1);
         
         // Perform test
         Test.startTest();
