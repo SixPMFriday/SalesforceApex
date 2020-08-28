@@ -7,7 +7,7 @@ private class TestAccountDeletion {
         
         // Perform test
         Test.startTest();
-        Database.DeleteResult result = Database.delete(acct, false);
+        Database.DeleteResult result = Database.delete(acct[0], false);
         Test.stopTest();
         
         // Verify that deletion threw error and was stopped by trigger
